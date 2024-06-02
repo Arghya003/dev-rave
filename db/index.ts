@@ -7,7 +7,7 @@ import * as schema from "./schema"
 // migrate(drizzle(migrationClient), ...)
 
 // for query purposes
-const queryClient = postgres(process.env.DATABASE_URL!);
+const queryClient = postgres('postgresql://postgres:example@localhost:5432/postgres');
 const db = drizzle(queryClient,{schema});
 export { db };
 // await db.select().from(...)...
